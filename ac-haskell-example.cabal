@@ -1,0 +1,81 @@
+name:                ac-haskell-example
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/alasconnect/ac-haskell-example#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Brian Jones
+maintainer:          bcj@alasconnect.com
+copyright:           AlasConnect
+category:            AI
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     AesonExample
+                     , LensExample
+                     , ServantExample
+                     , TischExample
+                     , TraceExample
+  build-depends:       base >= 4.7 && < 5
+                     , aeson >= 0.11 && < 1.0
+                     , lens >= 4.14 && < 4.16
+                     , servant-server >= 0.8 && < 0.9
+                     , warp >= 3.2 && < 3.3
+  default-language:    Haskell2010
+
+executable aeson-example-exe
+  hs-source-dirs:      app/Aeson
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ac-haskell-example
+  default-language:    Haskell2010
+
+executable lens-example-exe
+  hs-source-dirs:      app/Lens
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ac-haskell-example
+  default-language:    Haskell2010
+
+executable servant-example-exe
+  hs-source-dirs:      app/Servant
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ac-haskell-example
+  default-language:    Haskell2010
+
+executable tisch-example-exe
+  hs-source-dirs:      app/Tisch
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ac-haskell-example
+  default-language:    Haskell2010
+
+executable trace-example-exe
+  hs-source-dirs:      app/Trace
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ac-haskell-example
+  default-language:    Haskell2010
+
+test-suite ac-haskell-example-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , ac-haskell-example
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/alasconnect/ac-haskell-example
