@@ -1,9 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TemplateHaskell #-}
 
-module LensExample
-    ( runLens
-    ) where
+module Main where
 
 import Control.Lens
   ( (^.)
@@ -71,3 +69,6 @@ runLens = do
     u4 = over userAddress (\a -> a & addressZip .~ 88888) u2
     -- infix syntax partially applying the address
     u5 = u4 & userAddress %~ set addressState "WA"
+
+main :: IO ()
+main = runLens

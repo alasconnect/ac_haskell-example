@@ -1,8 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module TraceExample
-  ( runTrace
-  ) where
+module Main where
 
 import Debug.Trace
   ( trace
@@ -22,3 +20,6 @@ runTrace = do
   print $ add 11 22
   n <- ioAction 10
   print n
+
+main :: IO ()
+main = runTrace

@@ -2,9 +2,7 @@
 {-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE TypeOperators #-}
 
-module ServantExample
-    ( runServant
-    ) where
+module Main where
 
 import Data.Aeson
 import GHC.Generics
@@ -38,3 +36,6 @@ app = serve userApi server
 
 runServant :: IO ()
 runServant = run 8080 app
+
+main :: IO ()
+main = runServant

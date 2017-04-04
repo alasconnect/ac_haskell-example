@@ -1,9 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TemplateHaskell #-}
 
-module AesonExample
-    ( runAeson
-    ) where
+module Main where
 
 import Control.Lens
   ( (^.)
@@ -61,3 +59,6 @@ runAeson = do
   where
     u = User "George" "george@example.com" Nothing
     j = "{\"name\":\"Jack\",\"email\":\"jack@example.com\",\"fav_num\":7}"
+
+main :: IO ()
+main = runAeson
